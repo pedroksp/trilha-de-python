@@ -50,7 +50,7 @@ objetivo = orcamento_disponivel - custo_total
 print("---------------------------------")
 print(f"\nResumo final da sua viagem à {destino}!")
 print(f"\nValor total da hospedagem (R$): {calc_hospedagem:.2f}")
-print(f"\nCusto total da viagem (R$): {custo_total}:.2f")
+print(f"\nCusto total da viagem (R$): {custo_total:.2f}")
 
 if orcamento_possivel:
     print("\nOrçamento possível.")
@@ -63,6 +63,6 @@ else:
     print("\nA viagem não é viável.")
 
 if objetivo > 0:
-    print(f"\nSobrará R${objetivo}:.2f com a viagem.")
+    print(f"\nSobrará R${objetivo:.2f} com a viagem.")
 else:
     print(f"\nFaltará R${abs(objetivo):.2f} com a viagem.")
