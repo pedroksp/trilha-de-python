@@ -45,6 +45,8 @@ status_viagem = orcamento_possivel and qntd_dias > 0
 #Quanto faltará ou sobrará para alcançar o objetivo da viagem
 objetivo = orcamento_disponivel - custo_total
 
+
+#Exibição final dos resultados
 print("---------------------------------")
 print(f"\nResumo final da sua viagem à {destino}!")
 print(f"\nValor total da hospedagem (R$): {calc_hospedagem:.2f}")
