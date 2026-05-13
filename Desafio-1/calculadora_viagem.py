@@ -63,6 +63,6 @@ else:
     print("\nA viagem não é viável.")
 
 if objetivo > 0:
-    print(f"\nSobrará R${objetivo} com a viagem.")
+    print(f"\nSobrará R${objetivo}:.2f com a viagem.")
 else:
     print(f"\nFaltará R${abs(objetivo):.2f} com a viagem.")
