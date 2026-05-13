@@ -1,3 +1,10 @@
+#Valor da cotação do euro-real
+cotacao_euro = 6.10
+
+
+#"Loop" das entradas
+#Se alguma entrada estiver inválida ou com valor númerico negativo encerra o programa imediatamente.
+
 while True:
     try:
         orcamento_disponivel = float(input("Digite o orçamento disponível em R$: "))
@@ -10,6 +17,40 @@ while True:
 
         qntd_dias = int(input("\nInforme a quantidade de dias da viagem: "))
 
+        if orcamento_disponivel < 0 or custo_passagem < 0 or custo_diario_hospedagem < 0 or qntd_dias < 0:
+            print("Valores negativos são inválidos!")
+            exit()
+
+        break
+
     except ValueError:
-        print(f"\nAlguma entrada está inválida!, tente novamente.\n")
-        continue
+        print("\nEntrada inválida!")
+        exit()
+
+#Custo da diária em real
+custo_diario_real = custo_diario_hospedagem * cotacao_euro
+
+#Custo da hospedagem, de x dias, temos y de custo.
+calc_hospedagem = qntd_dias * custo_diario_real
+
+#Custo total da viagem
+custo_total = custo_passagem + calc_hospedagem
+
+#Orçamento possível, calculado se custo total é menor ou igual ao orçamento disponível
+orcamento_possivel = custo_total <= orcamento_disponivel
+
+#Status da viagem, se é viável ou não
+status_viagem = orcamento_possivel and qntd_dias > 0
+
+#Quanto faltará ou sobrará para alcançar o objetivo da viagem
+objetivo = orcamento_disponivel - custo_total
+
+
+
+
+
+
+
+    
+
+
