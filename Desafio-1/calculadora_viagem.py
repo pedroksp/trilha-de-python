@@ -2,29 +2,37 @@
 cotacao_euro = 6.10
 
 
+def valida_num(valor):
+    if valor < 0:
+        raise ValueError("Valores negativos não podem ser digitados!")
+    
+    return valor
+
 #"Loop" das entradas
 #Se alguma entrada estiver inválida ou com valor númerico negativo encerra o programa imediatamente.
 
 while True:
     try:
-        orcamento_disponivel = float(input("Digite o orçamento disponível em R$: "))
+        orcamento_disponivel = valida_num(float(input("Digite o orçamento disponível em R$: ")))
 
         destino = str(input("\nDigite o local (país/cidade) da viagem: "))
 
-        custo_passagem = float(input("\nDigite o custo da passagem em R$: "))
+        custo_passagem = valida_num(float(input("\nDigite o custo da passagem em R$: ")))
 
-        custo_diario_hospedagem = float(input("\nDigite o custo diário da hospedagem em EUR (Euros): "))
+        custo_diario_hospedagem = valida_num(float(input("\nDigite o custo diário da hospedagem em EUR (Euros): ")))
 
-        qntd_dias = int(input("\nInforme a quantidade de dias da viagem: "))
-
-        if orcamento_disponivel < 0 or custo_passagem < 0 or custo_diario_hospedagem < 0 or qntd_dias < 0:
-            print("Valores negativos são inválidos!")
-            exit()
+        qntd_dias = valida_num(int(input("\nInforme a quantidade de dias da viagem: ")))
 
         break
 
-    except ValueError:
-        print("\nEntrada inválida!")
+    except ValueError as e:
+        if "negativos" in str(e):
+            print(f"\n{e}")
+
+        else:
+            print("\nEntrada inválida!")
+
+        print("Operação encerrada.")
         exit()
 
 #Custo da diária em real
@@ -65,4 +73,4 @@ else:
 if objetivo > 0:
     print(f"\nSobrará R${objetivo:.2f} com a viagem.")
 else:
-    print(f"\nFaltará R${abs(objetivo):.2f} com a viagem.")
+    print(f"\nFaltará R${abs(objetivo):.2f} para a viagem.")
