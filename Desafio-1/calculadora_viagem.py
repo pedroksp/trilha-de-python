@@ -1,7 +1,7 @@
 #Valor da cotação do euro-real
 cotacao_euro = 6.10
 
-
+#Função que valida se os números digitados int/float são positivos, caso contrário chama o ValueError
 def valida_num(valor):
     if valor < 0:
         raise ValueError("Valores negativos não podem ser digitados!")
