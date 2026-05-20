@@ -1,6 +1,8 @@
 # trilha-de-python
 Python - for_code
 
+Desafio 1:
+
 - Explicação do funcionamento do programa:
 
 O programa funciona inicialmente com a entrada de dados pelo próprio usuário, usando try e except (caso digitar string em um float), e se algum dos valores númericos forem negativos ou as entradas forem inválidas, o programa encerra imediatamente.
