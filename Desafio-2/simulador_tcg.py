@@ -46,10 +46,21 @@ while True:
         exit()
 
 
+def atacar(nome_atacante, ataque, nome_defensor, hp_defensor):
+    print(f"{nome_atacante} atacou {nome_defensor} causando {ataque} de dano!\n") 
+
+    hp_defensor = hp_defensor - ataque
+
+    if hp_defensor < 0:
+        hp_defensor = 0
+
+    print(f"{nome_defensor} agora tem {hp_defensor} de vida.\n")
+    
+    return hp_defensor
 
 
-        
-
+def exibir_placar(nome1, hp1, nome2, hp2):
+    print(f"Após o turno, temos:\n {nome1} com {hp1} de vida\n {nome2} com {hp2} de vida.\n")
         
         
 
