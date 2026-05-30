@@ -22,8 +22,10 @@ print(f"Quantidade de reagentes diferentes: {len(purezas_set)}")
 
 #Combinando as 3 listas em uma lista de tuplas
 combinar_listas = zip(reagentes, lotes, purezas)
-tupla_listas = list(combinar_listas)
+lista_tuplas = list(combinar_listas)
 
 
-
+#Gerando o relatório por unpacking da lista de tuplas
+for nome, lote, valor in lista_tuplas:
+    print(f"Frasco do lote: {lote} | Reagente: {nome} | Pureza: {valor}%") 
 
