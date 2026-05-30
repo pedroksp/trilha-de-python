@@ -17,7 +17,7 @@ purezas = [99.5, 92.0, 99.5, 98.0, 99.9, 98.5, 96.0, 99.0, 99.0, 98.8, 99.5, 92.
 
 #Separando os elementos únicos da lista de purezas
 purezas_set = set(purezas)
-print(f"Quantidade de reagentes diferentes: {len(purezas_set)}")
+print(f"Quantidade de reagentes diferentes: {len(purezas_set)}\n")
 
 
 #Combinando as 3 listas em uma lista de tuplas
@@ -29,3 +29,6 @@ lista_tuplas = list(combinar_listas)
 for nome, lote, valor in lista_tuplas:
     print(f"Frasco do lote: {lote} | Reagente: {nome} | Pureza: {valor}%") 
 
+#Filtragem por List Comprehension
+aprovados = [lote for nome, lote, valor in lista_tuplas if valor >= 98]
+print(f"\nLotes aprovados: {aprovados}")
